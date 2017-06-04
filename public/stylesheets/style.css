@@ -7,17 +7,74 @@
 /*CSS for Navbar component */
 
 .navbar {
-  background-color: #7B93BA;
+  background-color: #333;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
+
 .navbar ul li {
-  text-decoration: none;
   display: inline;
   font-size: 40px;
+  color: black;
 }
 
-.navbar ul li:hover {
+.fix_nav_link {
   color: white;
+  text-decoration: none;
+}
+
+.fix_nav_link:hover {
+  color: yellow;
+}
+
+/* CSS for Season Sections */
+
+.top_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.side_area {
+  flex: 1;
+  height: 760px;
+  background-color: #333;
+}
+
+.spring_area {
+  flex: 8;
+  background-image: url(https://source.unsplash.com/JdjdIjzJl94);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.summer_area {
+  flex: 8;
+  background-image: url(https://source.unsplash.com/0nv-h04oPhM);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.fall_area {
+  flex: 8;
+  background-image: url(https://source.unsplash.com/ps2daRcXYes);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.winter_area {
+  flex: 8;
+  background-image: url(https://source.unsplash.com/ppnnu5-9bgI);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+footer {
+  background-color: #333;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

@@ -4,6 +4,13 @@
 
 <script type='text/babel'>
 
+var { Router,
+      Route,
+      IndexRoute,
+      IndexLink,
+      hashHistory,
+      Link } = ReactRouter;
+
     //This component creates the navbar and will not change as the user clicks around. 
     let Navbar = React.createClass({
       render: function() {
@@ -11,23 +18,114 @@
             <div>
                 <div className='center navbar'>
                     <ul>
-                        <li>Spring</li>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <li>Summer</li>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <li>Fall</li>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <li>Winter</li>
+                        <li><Link className='fix_nav_link' to="/">Spring</Link></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li><Link className='fix_nav_link' to="/summer">Summer</Link></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li><Link className='fix_nav_link' to="/fall">Fall</Link></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li><Link className='fix_nav_link' to="/winter">Winter</Link></li>
                     </ul>
                 </div>
+                {this.props.children}
             </div>
           );
       }
     });
 
+    //Components for each season 
+    let Spring = React.createClass({
+        render: function() {
+            return (
+                <div>
+                    <div className='top_container'>
+                        <div className='center side_area'>
+                        </div>
+                        <div className='spring_area'>
+                        </div>
+                        <div className='center side_area'>
+                        </div>
+                    </div>
+                    <Footer/>
+                </div>
+            )
+        }
+    })
+
+    let Summer = React.createClass({
+        render: function() {
+            return (
+                <div>
+                    <div className='top_container'>
+                        <div className='center side_area'>
+                        </div>
+                        <div className='summer_area'>
+                        </div>
+                        <div className='center side_area'>
+                        </div>
+                    </div>
+                    <Footer/>
+                </div>
+            )
+        }
+    })
+
+    let Fall = React.createClass({
+        render: function() {
+            return (
+                <div>
+                    <div className='top_container'>
+                        <div className='center side_area'>
+                        </div>
+                        <div className='fall_area'>
+                        </div>
+                        <div className='center side_area'>
+                        </div>
+                    </div>
+                    <Footer/>
+                </div>
+            )
+        }
+    })
+
+    let Winter = React.createClass({
+        render: function() {
+            return (
+                <div>
+                    <div className='top_container'>
+                        <div className='center side_area'>
+                        </div>
+                        <div className='winter_area'>
+                        </div>
+                        <div className='center side_area'>
+                        </div>
+                    </div>
+                    <Footer/>
+                </div>
+            )
+        }
+    })
+
+    let Footer = React.createClass({
+        render: function() {
+            return (
+                <div>
+                    <footer>
+                    </footer>
+                </div>
+            )
+        }
+    })
+
+
+
+    //Rendering functions here 
     let destination = document.querySelector('#container');
 
     ReactDOM.render(
       <ReactRouter.Router history={ReactRouter.hashHistory}>
         <ReactRouter.Route path="/" component={Navbar}>
-     
+            <IndexRoute component={Spring}/>
+            <Route path="summer" component={Summer} />
+            <Route path="fall" component={Fall} />
+            <Route path="winter" component={Winter} />
         </ReactRouter.Route>
       </ReactRouter.Router>,
       destination
