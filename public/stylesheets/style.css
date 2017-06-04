@@ -1,0 +1,23 @@
+/* Generic CSS */
+
+.center {
+  text-align: center;
+}
+
+/*CSS for Navbar component */
+
+.navbar {
+  background-color: #7B93BA;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar ul li {
+  text-decoration: none;
+  display: inline;
+  font-size: 40px;
+}
+
+.navbar ul li:hover {
+  color: white;
+}

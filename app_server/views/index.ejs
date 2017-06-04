@@ -1,10 +1,37 @@
 <% include layout %>
 
-<h1>Home Page</h1>
-
 <div id='container'></div>
 
 <script type='text/babel'>
+
+    //This component creates the navbar and will not change as the user clicks around. 
+    let Navbar = React.createClass({
+      render: function() {
+          return (
+            <div>
+                <div className='center navbar'>
+                    <ul>
+                        <li>Spring</li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li>Summer</li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li>Fall</li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li>Winter</li>
+                    </ul>
+                </div>
+            </div>
+          );
+      }
+    });
+
+    let destination = document.querySelector('#container');
+
+    ReactDOM.render(
+      <ReactRouter.Router history={ReactRouter.hashHistory}>
+        <ReactRouter.Route path="/" component={Navbar}>
+     
+        </ReactRouter.Route>
+      </ReactRouter.Router>,
+      destination
+    );
 
   
 </script>
